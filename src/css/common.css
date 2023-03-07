@@ -16,3 +16,69 @@ img {
   display: block;
   max-width: 100%;
 }
+
+/* додаю мінімальне оформлення інтерфейсу для 02-timer */
+.timer {
+  display: flex;
+  gap: 30px;
+  width: 450px;
+  justify-content: center;
+  padding: 15px;
+  margin: 30px auto 0;
+
+  border: 2px solid grey;
+  border-radius: 10px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.label {
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.value {
+  font-size: 40px;
+  font-weight: 700;
+  font-style: normal;
+}
+
+#datetime-picker {
+  width: 250px;
+  padding: 15px;
+  font-size: 26px;
+  font-weight: 600;
+  color: rgb(95, 84, 84);
+  border: 2px solid grey;
+  border-radius: 10px;
+  margin-left: 680px;
+  margin-top: 50px;
+}
+
+.timer-btn {
+  width: 150px;
+  padding: 15px;
+  font-size: 26px;
+  font-weight: 600;
+  color: rgb(95, 84, 84);
+  text-transform: uppercase;
+  background-color: white;
+  margin-left: 25px;
+
+  border: 2px solid grey;
+  border-radius: 10px;
+}
+
+.timer-btn:hover,
+.timer-btn:focus,
+#datetime-picker:hover,
+#datetime-picker:focus {
+  color: rgb(230, 208, 10);
+  border: 2px solid rgb(230, 208, 10);
+}
