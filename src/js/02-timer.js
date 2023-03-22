@@ -22,25 +22,28 @@ const TIMER_DELAY = 1000;
 
 // console.log(refs.secondsEl);
 
-flatpickr(
-  '#datetime-picker',
-  (options = {
-    enableTime: true,
-    time_24hr: true,
-    defaultDate: new Date(),
-    minuteIncrement: 1,
-    onClose(selectedDates) {
-      if (selectedDates[0] <= new Date()) {
-        Notiflix.Notify.failure('Please choose a date in the future', {
-          clickToClose: true,
-        });
-      } else {
-        countdown = selectedDates[0] - new Date();
-        refs.btnStart.disabled = false;
-      }
-    },
-  })
-);
+// підключаємо календар
+const options = {
+  enableTime: true,
+  time_24hr: true,
+  defaultDate: new Date(),
+  minuteIncrement: 1,
+  onClose(selectedDates) {
+    // перевіряємо , що дату обрано не в минулому
+    if (selectedDates[0] <= new Date()) {
+      Notiflix.Notify.failure('Please choose a date in the future', {
+        clickToClose: true,
+      });
+    } else {
+      // вираховуємо час для нашого таймера
+      countdown = selectedDates[0] - new Date();
+      refs.btnStart.disabled = false;
+    }
+  },
+};
+
+flatpickr(refs.inputDate, options);
+// console.log(flatpickr);
 
 function convertMs(ms) {
   // Number of milliseconds per unit of time
